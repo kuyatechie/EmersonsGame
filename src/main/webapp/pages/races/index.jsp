@@ -11,22 +11,12 @@
         <table id="races">
             <thead>
                 <tr>
-                    <th>Race</th>
-                    <th>Players</th>
-                    <th>Started At</th>
-                    <th>Finished At</th>
+                    <th><button onclick="window.location.href='http://localhost:8080/EmersonsGame/create'">Create</button></th>
+                </tr>
+                <tr>
+                    <th><button type="button">Join</button></th>
                 </tr>
             </thead>
-            <tbody>
-                <c:forEach var="race" items="${requestScope.races}">
-                    <tr>
-                        <td>${race.name}</td>
-                        <td>${race.players.size()}</td>
-                        <td>${race.startedAt}</td>
-                        <td>${race.finishedAt}</td>
-                    </tr>
-                </c:forEach>
-            </tbody>
         </table>
     </body>
 </html>

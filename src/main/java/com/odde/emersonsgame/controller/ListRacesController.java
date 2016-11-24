@@ -24,9 +24,6 @@ public class ListRacesController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Race> races = listRacesService.getAllRaces();
-
-        req.setAttribute(RACES, races);
 
         req.getRequestDispatcher("pages/races/index.jsp").forward(req, resp);
     }
