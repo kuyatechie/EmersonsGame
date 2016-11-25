@@ -9,17 +9,19 @@ public class Race {
     private List<Player> players;
     private Date startedAt;
     private Date finishedAt;
+    private String gameId;
 
     public Race() {
-        this(null, null, null);
+        this(null, null, null, null);
     }
 
-    public Race(String name, Date startedAt, Date finishedAt) {
+    public Race(String name, Date startedAt, Date finishedAt, String gameId) {
         this.players = new ArrayList<Player>();
 
         this.name = name;
         this.startedAt = startedAt;
         this.finishedAt = finishedAt;
+        this.gameId = gameId;
     }
 
     public String getName() {
@@ -31,6 +33,10 @@ public class Race {
         players.add(new Player());
 
         return players;
+    }
+
+    public String getGameId(){
+        return gameId;
     }
 
     public Date getStartedAt() {

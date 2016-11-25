@@ -13,16 +13,12 @@
 <body>
 <table id="races">
     <tbody>
-    <tr>
-        <th><h3>Name : <input type="text" name="playerName"></h3></th>
-    </tr>
-    <tr>
-        <th><h3>Game Id : Angz1234</h3></th>
-    </tr>
-    <tr>
-        <th><button type="button">Cancel</button></th>
-        <th><button onclick="window.location.href='http://localhost:8080/EmersonsGame/save'">Save</button></th>
-    </tr>
+
+    <form action="/EmersonsGame/create" method="post">
+        Name : <input type="text" name="playerName"><br>
+        Game Id : <input type="text" name="gameId"><br>
+        <input type="submit" value="Submit">
+    </form>
     </tbody>
 </table>
 </body>
