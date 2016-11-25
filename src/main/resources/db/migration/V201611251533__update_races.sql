@@ -1,0 +1,1 @@
+ALTER TABLE races ADD COLUMN game_id VARCHAR(128)

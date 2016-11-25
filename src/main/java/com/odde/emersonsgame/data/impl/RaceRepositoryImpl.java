@@ -17,7 +17,7 @@ import static com.odde.emersonsgame.data.impl.Connections.getConnection;
 public class RaceRepositoryImpl implements RaceRepository {
     @Override
     public List<Race> getAll() {
-        String sql = "SELECT id, name, started_at, finished_at, gameId FROM races";
+        String sql = "SELECT id, name, started_at, finished_at, game_id FROM races";
 
         Connection c = null;
         PreparedStatement ps = null;
@@ -34,7 +34,7 @@ public class RaceRepositoryImpl implements RaceRepository {
                 String name = rs.getString("name");
                 Date startedAt = rs.getTimestamp("started_at");
                 Date finishedAt = rs.getTimestamp("finished_at");
-                String gameId = rs.getString("gameId");
+                String gameId = rs.getString("game_id");
 
                 Race race = new Race(name, startedAt, finishedAt, gameId);
 
@@ -46,8 +46,10 @@ public class RaceRepositoryImpl implements RaceRepository {
             throw new DataException(e);
         } finally {
             try {
-                rs.close();
-                ps.close();
+                if(rs != null)
+                    rs.close();
+                if(ps != null)
+                    ps.close();
                 c.close();
             } catch (SQLException e) {
                 throw new DataException(e);
